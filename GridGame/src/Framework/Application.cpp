@@ -11,6 +11,7 @@ Application::Application()
 {}
 
 bool Application::Init() {
+    SetOutApplicationLogValidFlag(false);
     SetAlwaysRunFlag(true);
     ChangeWindowMode(true);
     SetWindowTextDX("Lights Out");
