@@ -1,102 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="ヘッダー ファイル">
+    <Filter Include="include">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="src\Audio">
+      <UniqueIdentifier>{ac1c425a-649e-4677-a99f-7449d1207df8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{1909d3c9-4eca-4917-a8a0-e1188ee19a85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Framework">
+      <UniqueIdentifier>{89a58314-2942-46a3-887e-284f354f19a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{9b5de6ba-c48d-4d27-a023-c2134b80bfa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Resource">
+      <UniqueIdentifier>{e4b41f5c-7550-4376-a421-aa1a8a094376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Grid">
+      <UniqueIdentifier>{f7f726de-2f8c-4ad6-aec1-496b93f4912d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Scene">
+      <UniqueIdentifier>{e877dbfc-fa95-4898-9837-94a7672d06b7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WinMain.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Core\GameObject.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Core\GameObjectManager.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Core\Input.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjectManager.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Core\InputSystem.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Framework\Application.cpp">
+      <Filter>src\Framework</Filter>
     </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Framework\Scene.cpp">
+      <Filter>src\Framework</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Framework\SceneManager.cpp">
+      <Filter>src\Framework</Filter>
     </ClCompile>
-    <ClCompile Include="SampleScene.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Game\Scene\SampleScene.cpp">
+      <Filter>src\Game\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="GridInput.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Game\Grid\Grid.cpp">
+      <Filter>src\Game\Grid</Filter>
     </ClCompile>
-    <ClCompile Include="GridRenderer.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Game\Grid\GridInput.cpp">
+      <Filter>src\Game\Grid</Filter>
     </ClCompile>
-    <ClCompile Include="GridObject.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Game\Grid\GridObject.cpp">
+      <Filter>src\Game\Grid</Filter>
     </ClCompile>
-    <ClCompile Include="InputSystem.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\Game\Grid\GridRenderer.cpp">
+      <Filter>src\Game\Grid</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="src\WinMain.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Grid.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\Application.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="Application.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\Component.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="GridConfig.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\GameObject.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\GameObjectManager.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="Component.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\Grid.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjectManager.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\GridConfig.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\GridInput.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\GridObject.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="SampleScene.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\GridRenderer.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="GridObject.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\Input.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="GridInput.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\InputSystem.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="GridRenderer.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\SampleScene.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="Input.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\Scene.hpp">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="InputSystem.hpp">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\SceneManager.hpp">
+      <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
