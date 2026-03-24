@@ -6,9 +6,10 @@
 
 /// @brief シーンの基底クラス
 class Scene {
+private:
+	std::unique_ptr<GameObjectManager> _gameObjectManager; // GameObject を管理
 protected:
 	std::string _name; // シーン名
-	std::unique_ptr<GameObjectManager> _gameObjectManager; // GameObject を管理
 public:
 	/// @brief コンストラクタ
 	/// @param name シーン名
