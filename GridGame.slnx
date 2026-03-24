@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="GridGame/GridGame.vcxproj" Id="7ad36ba9-8cb1-4117-af0d-4e2b52168bf8" />
+</Solution>
