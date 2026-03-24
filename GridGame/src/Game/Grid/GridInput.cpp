@@ -1,10 +1,8 @@
 #include <DxLib.h>
-#include <cassert>
 
 #include "../../include/GridInput.hpp"
 #include "../../include/GridObject.hpp"
 #include "../../include/Input.hpp"
-#include "../../include/AssetResolver.hpp"
 
 GridInput::GridInput(const GridConfig& config)
 	: Component()
@@ -12,15 +10,13 @@ GridInput::GridInput(const GridConfig& config)
 {}
 
 void GridInput::Begin() {
-	auto obj = dynamic_cast<GridObject*>(GetOwner());
-
+	auto obj = static_cast<GridObject*>(GetOwner());
 	_grid = &obj->GetGrid();
-	_clickSound.audio = obj->GetComponent<Audio>();
 
-	assert(_grid != nullptr);
-	assert(_clickSound.audio != nullptr);
-
-	_clickSound.soundData = AssetResolver::Load<SoundData>("Click", "Resources/Sounds/SE/Click.mp3");
+	if (_clickSE == -1) {
+		_clickSE = LoadSoundMem("Resources/Sounds/SE/Click.mp3");
+		ChangeVolumeSoundMem(128, _clickSE);
+	}
 }
 
 void GridInput::Update() {
@@ -30,15 +26,19 @@ void GridInput::Update() {
 
 	// グリッド情報
 	auto size = _grid->GetSize();
+	auto sx = _gridConfig.cx - (size * _gridConfig.cellSize) / 2;
+	auto sy = _gridConfig.cy - (size * _gridConfig.cellSize) / 2;
 
-	// 範囲内でクリックしたとき
-	if (clicked && _gridConfig.IsInside(mx, my, size)) {
-		auto [gx, gy] = _gridConfig.ScreenToGrid(mx, my, size);
-			 
+	// 範囲確認
+	auto isInside = mx >= sx && mx < sx + size * _gridConfig.cellSize && my >= sy && my < sy + size * _gridConfig.cellSize;
+
+	if (clicked && isInside) {
+
+		auto gx = (mx - sx) / _gridConfig.cellSize;
+		auto gy = (my - sy) / _gridConfig.cellSize;
+
 		_grid->ToggleAround(gx, gy);
 
-		if (_clickSound.audio) {
-			_clickSound.audio->Play(_clickSound.soundData);
-		}
+		PlaySoundMem(_clickSE, DX_PLAYTYPE_BACK);
 	}
 }

@@ -71,21 +71,6 @@
     <ClCompile Include="src\WinMain.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Resource\Asset.cpp">
-      <Filter>src\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\SoundData.cpp">
-      <Filter>src\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\Audio.cpp">
-      <Filter>src\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Resource\AssetManager.cpp">
-      <Filter>src\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\ActiveSound.cpp">
-      <Filter>src\Audio</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.hpp">
@@ -128,27 +113,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\SceneManager.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Audio.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Asset.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\AssetManager.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SoundData.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Hash.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\AssetResolver.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\ActiveSound.hpp">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

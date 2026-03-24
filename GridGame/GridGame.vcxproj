@@ -19,9 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Audio\ActiveSound.cpp" />
-    <ClCompile Include="src\Audio\Audio.cpp" />
-    <ClCompile Include="src\Audio\SoundData.cpp" />
     <ClCompile Include="src\Core\GameObject.cpp" />
     <ClCompile Include="src\Core\GameObjectManager.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
@@ -34,17 +31,10 @@
     <ClCompile Include="src\Game\Grid\GridObject.cpp" />
     <ClCompile Include="src\Game\Grid\GridRenderer.cpp" />
     <ClCompile Include="src\Game\Scene\SampleScene.cpp" />
-    <ClCompile Include="src\Resource\Asset.cpp" />
-    <ClCompile Include="src\Resource\AssetManager.cpp" />
     <ClCompile Include="src\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\ActiveSound.hpp" />
     <ClInclude Include="include\Application.hpp" />
-    <ClInclude Include="include\Asset.hpp" />
-    <ClInclude Include="include\AssetResolver.hpp" />
-    <ClInclude Include="include\AssetManager.hpp" />
-    <ClInclude Include="include\Audio.hpp" />
     <ClInclude Include="include\Component.hpp" />
     <ClInclude Include="include\GameObject.hpp" />
     <ClInclude Include="include\GameObjectManager.hpp" />
@@ -53,13 +43,11 @@
     <ClInclude Include="include\GridInput.hpp" />
     <ClInclude Include="include\GridObject.hpp" />
     <ClInclude Include="include\GridRenderer.hpp" />
-    <ClInclude Include="include\Hash.hpp" />
     <ClInclude Include="include\Input.hpp" />
     <ClInclude Include="include\InputSystem.hpp" />
     <ClInclude Include="include\SampleScene.hpp" />
     <ClInclude Include="include\Scene.hpp" />
     <ClInclude Include="include\SceneManager.hpp" />
-    <ClInclude Include="include\SoundData.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
