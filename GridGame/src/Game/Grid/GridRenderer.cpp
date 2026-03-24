@@ -1,4 +1,5 @@
 #include <DxLib.h>
+#include <cassert>
 
 #include "../../include/GridRenderer.hpp"
 #include "../../include/GridObject.hpp"
@@ -40,8 +41,10 @@ void GridRenderer::DrawGridLines(int gridSize, int startX, int startY) const {
 }
 
 void GridRenderer::Begin() {
-	auto obj = static_cast<GridObject*>(GetOwner());
+	auto obj = dynamic_cast<GridObject*>(GetOwner());
 	_grid = &obj->GetGrid();
+
+	assert(_grid != nullptr);
 
 	_lineColor = GetColor(0, 0, 0);
 	_offColor  = GetColor(255, 255, 255);

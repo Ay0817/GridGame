@@ -1,15 +1,18 @@
 #pragma once
 
+#include <memory>
+
 #include "GameObject.hpp"
 #include "Grid.hpp"
+#include "Audio.hpp"
 
 /// @brief グリッドゲーム本体
 class GridObject final : public GameObject {
 private:
-	Grid _grid; // グリッドのコアデータ
+	Grid _grid;            // グリッドのコアデータ
+	AudioPlay _clearSound; // クリア時のサウンド 
 
 	bool _isCleared = false; // クリア済みか？
-	int _clearSE = -1;       // 効果音ハンドル
 public:
 	/// @brief コンストラクタ
 	/// @param name オブジェクト名
