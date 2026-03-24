@@ -2,6 +2,7 @@
 #include "../../include/GridObject.hpp"
 #include "../../include/GridInput.hpp"
 #include "../../include/GridRenderer.hpp"
+#include "../../include/Audio.hpp"
 
 SampleScene::SampleScene(const std::string& name)
 	: Scene(name)
@@ -11,8 +12,9 @@ SampleScene::SampleScene(const std::string& name)
 void SampleScene::Begin() {
 	auto grid = AddObject<GridObject>("grid", 3);
 
-	auto gridInput    = grid->AddComponent<GridInput>(_gridConfig);
-	auto gridRenderer = grid->AddComponent<GridRenderer>(_gridConfig);
+	grid->AddComponent<Audio>();
+	grid->AddComponent<GridInput>(_gridConfig);
+	grid->AddComponent<GridRenderer>(_gridConfig);
 
 	Scene::Begin();
 }
