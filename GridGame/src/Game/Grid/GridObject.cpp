@@ -1,6 +1,8 @@
 #include <DxLib.h>
+#include <cassert>
 
 #include "../../include/GridObject.hpp"
+#include "../../../include/AssetResolver.hpp"
 
 GridObject::GridObject(const std::string& name, int size)
 	: GameObject(name)
@@ -8,16 +10,19 @@ GridObject::GridObject(const std::string& name, int size)
 {}
 
 void GridObject::Begin() {
-	if (_clearSE == -1) {
-		_clearSE = LoadSoundMem("Resources/Sounds/SE/Clear.mp3");
-		ChangeVolumeSoundMem(128, _clearSE);
-	}
+	_clearSound.audio = GetComponent<Audio>();
+
+	assert(_clearSound.audio != nullptr);
+
+	_clearSound.soundData = AssetResolver::Load<SoundData>("Clear", "Resources/Sounds/SE/Clear.mp3");
 }
 
 void GridObject::Update() {
 	if (!_isCleared && _grid.IsCleared()) {
 		_isCleared = true;
-		PlaySoundMem(_clearSE, DX_PLAYTYPE_BACK);
+		if (_clearSound.audio) {
+			_clearSound.audio->Play(_clearSound.soundData);
+		}
 	}
 	
 	if (!_grid.IsCleared() && _isCleared) {

@@ -1,17 +1,18 @@
 #pragma once
 
+#include <memory>
+
 #include "Component.hpp"
 #include "Grid.hpp"
 #include "GridConfig.hpp"
+#include "Audio.hpp"
 
 /// @brief グリッドへの入力処理を行う
 class GridInput final : public Component {
 private:
-	Grid* _grid = nullptr;  // 操作対象へのポインタ
-	GridConfig _gridConfig; // グリッドの構成
-
-	int _prevMouse = 0; // グリッドへの入力処理を担当
-	int _clickSE = -1;  // 効果音のハンドル
+	Grid* _grid = nullptr;   // 操作対象へのポインタ
+	GridConfig _gridConfig;  // グリッドの構成
+	AudioPlay _clickSound;   // クリックしたときのサウンド
 public:
 	/// @brief コンストラクタ
 	/// @param config グリッドの構成
