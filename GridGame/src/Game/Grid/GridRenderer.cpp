@@ -1,8 +1,8 @@
 #include <DxLib.h>
 #include <cassert>
 
-#include "../../include/GridRenderer.hpp"
-#include "../../include/GridObject.hpp"
+#include "../../../include/GridRenderer.hpp"
+#include "../../../include/GridObject.hpp"
 
 GridRenderer::GridRenderer(const GridConfig& config)
 	: Component()

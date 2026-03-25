@@ -1,7 +1,7 @@
 #include <DxLib.h>
 #include <cassert>
 
-#include "../../include/GridObject.hpp"
+#include "../../../include/GridObject.hpp"
 #include "../../../include/AssetResolver.hpp"
 
 GridObject::GridObject(const std::string& name, int size)

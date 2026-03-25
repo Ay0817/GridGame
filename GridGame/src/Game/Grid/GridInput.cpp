@@ -1,10 +1,10 @@
 #include <DxLib.h>
 #include <cassert>
 
-#include "../../include/GridInput.hpp"
-#include "../../include/GridObject.hpp"
-#include "../../include/Input.hpp"
-#include "../../include/AssetResolver.hpp"
+#include "../../../include/GridInput.hpp"
+#include "../../../include/GridObject.hpp"
+#include "../../../include/Input.hpp"
+#include "../../../include/AssetResolver.hpp"
 
 GridInput::GridInput(const GridConfig& config)
 	: Component()

@@ -1,8 +1,8 @@
-#include "../../include/SampleScene.hpp"
-#include "../../include/GridObject.hpp"
-#include "../../include/GridInput.hpp"
-#include "../../include/GridRenderer.hpp"
-#include "../../include/Audio.hpp"
+#include "../../../include/SampleScene.hpp"
+#include "../../../include/GridObject.hpp"
+#include "../../../include/GridInput.hpp"
+#include "../../../include/GridRenderer.hpp"
+#include "../../../include/Audio.hpp"
 
 SampleScene::SampleScene(const std::string& name)
 	: Scene(name)
