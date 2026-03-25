@@ -11,9 +11,9 @@ Font::Font(std::string_view name, std::string_view path, const FontInfo& fontInf
 	if (_handle == -1) {
 		auto src = AddFontResourceExA(path.data(), FR_PRIVATE, NULL);
 
-		assert(src == 0);
+		assert(src != 0);
 
-		_handle = CreateFontToHandle(name.data(), _fontInfo.size, _fontInfo.thick, FontType::ANTI_ALIASING);
+		_handle = CreateFontToHandle(name.data(), _fontInfo.size, _fontInfo.thick, _fontInfo.type);
 
 		assert(_handle != -1);
 	}
