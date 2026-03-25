@@ -8,6 +8,15 @@ GameObject::GameObject(const std::string& name)
 	, _isInit(false)
 {}
 
+GameObject::GameObject(const std::string & name, const Transform & transform)
+	: _name(name)
+	, _instanceID(0)
+	, _active(true)
+	, _destroyed(false)
+	, _isInit(false)
+	, _transfrom(transform)
+{}
+
 void GameObject::Begin() {
 	if (_destroyed) {
 		return;
