@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Component.hpp"
+#include "Transform.hpp"
 
 /// @brief コンポーネントを所有し、ゲーム内の振る舞いを構成するゲームオブジェクトクラス
 class GameObject {
@@ -16,6 +17,7 @@ protected:
 	bool _isInit;             // 初期化されたか？
 
 	std::vector<std::unique_ptr<Component>> _components; // 所有している Component
+	Transform _transfrom; // Transfrom 
 public:
 	/// @brief コンストラクタ
 	/// @param name オブジェクト名
@@ -104,5 +106,11 @@ public:
 		}
 
 		return result;
+	}
+
+	/// @brief Transform を取得
+	/// @return Transform
+	Transform& GetTransform() {
+		return _transfrom;
 	}
 };
