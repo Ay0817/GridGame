@@ -1,0 +1,68 @@
+#pragma once
+
+#include <string>
+#include <string_view>
+
+#include "Asset.hpp"
+
+/// @brief フォント情報
+struct FontInfo {
+	int size;  // サイズ
+	int thick; // 太さ
+	int type;  // 種類
+
+	/// @brief コンストラクタ
+	/// @param size サイズ
+	/// @param thick 太さ
+	/// @param type 種類
+	FontInfo(int size, int thick, int type)
+		: size(size)
+		, thick(thick)
+		, type(type)
+	{}
+};
+
+/// @brief フォント
+class Font final : public Asset {
+private:
+	std::string _path;  // ファイルパス
+	FontInfo _fontInfo; // フォント情報
+public:
+	/// @brief コンストラクタ
+	/// @param name サウンド名
+	/// @param path ファイルパス
+	Font(std::string_view name, std::string_view path, const FontInfo& fontInfo);
+
+	/// @brief デストラクタ
+	virtual ~Font();
+
+	/// @brief 解放
+	virtual void Release() override;
+};
+
+// @brief フォントの種類
+namespace FontType {
+	// @brief 補正なしの生フォント。ギザギザが目立つ。
+	inline constexpr int NORMAL = 0x00;
+
+	// @brief フォントに黒縁が付く。可読性が高い。
+	inline constexpr int EDGE = 0x01;
+
+	// @brief なめらかな文字になる。輪郭はぼやけ気味。
+	inline constexpr int ANTI_ALIASING = 0x02;
+
+	// @brief より綺麗。輪郭が細くシャープ。
+	inline constexpr int ANTI_ALIASING_4X4 = 0x12;
+
+	// @brief 最も滑らか。高精細だけど重い。
+	inline constexpr int ANTI_ALIASING_8X8 = 0x22;
+
+	// @brief 滑らか＋縁取りで読みやすさ最高。
+	inline constexpr int ANTI_ALIASING_EDGE_4X4 = 0x23;
+
+	// @brief 最大品質。タイトル画面や静的演出向け。
+	inline constexpr int ANTI_ALIASING_EDGE_8X8 = 0x33;
+
+	// @brief デフォルト
+	inline constexpr int DEFAULT = 0x23;
+}
