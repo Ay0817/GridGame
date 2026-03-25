@@ -22,8 +22,8 @@ public:
 	/// @param name アセット名
 	/// @param path ファイルパス
 	/// @return 指定した型のアセット
-	template <IsAsset T>
-	static std::shared_ptr<T> Load(std::string_view name, std::string_view path) {
+	template <IsAsset T, class... Args>
+	static std::shared_ptr<T> Load(std::string_view name, std::string_view path, Args&&... args) {
 		int key = Hash::FNV1a_32(name);
 
 		auto it = _assets.find(key);
@@ -32,7 +32,7 @@ public:
 			return std::dynamic_pointer_cast<T>(it->second);
 		}
 
-		auto asset = std::make_shared<T>(std::string(name), std::string(path));
+		auto asset = std::make_shared<T>(std::string(name), std::string(path), std::forward<Args>(args)...);
 		_assets[key] = asset;
 
 		return asset;

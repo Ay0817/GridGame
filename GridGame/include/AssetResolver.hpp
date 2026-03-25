@@ -10,9 +10,9 @@ public:
 	/// @param name アセット名
 	/// @param path ファイルパス
 	/// @return 指定した型のアセット
-	template <IsAsset T>
-	static std::shared_ptr<T> Load(std::string_view name, std::string_view path) {
-		return AssetManager::Load<T>(name, path);
+	template <IsAsset T, class... Args>
+	static std::shared_ptr<T> Load(std::string_view name, std::string_view path, Args&&... args) {
+		return AssetManager::Load<T>(name, path, std::forward<Args>(args)...);
 	}
 
 	/// @brief 指定した型のアセットを取得
