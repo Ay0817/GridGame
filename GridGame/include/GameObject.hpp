@@ -23,6 +23,11 @@ public:
 	/// @param name オブジェクト名
 	GameObject(const std::string& name);
 
+	/// @brief コンストラクタ
+	/// @param name オブジェクト名
+	/// @param transform (座標,スケール,角度)
+	GameObject(const std::string& name, const Transform& transform);
+
 	/// @brief デフォルトデストラクタ
 	virtual ~GameObject() = default;
 
