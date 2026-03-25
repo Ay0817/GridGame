@@ -1,4 +1,4 @@
-#include "../../include/Grid.hpp"
+#include "../../../include/Grid.hpp"
 
 Grid::Grid(int gridSize)
 	: _gridSize(gridSize)
