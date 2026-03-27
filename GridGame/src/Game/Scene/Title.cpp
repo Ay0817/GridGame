@@ -3,6 +3,7 @@
 #include "../../../include/Title.hpp"
 #include "../../../include/Palette.hpp"
 #include "../../../include/AssetResolver.hpp"
+#include "../../../include/TitleController.hpp"
 
 Title::Title(const std::string& name)
 	: Scene(name)
@@ -19,6 +20,7 @@ void Title::Begin() {
 	_textInfo.font = font;
 
 	title->AddComponent<Text>(_textInfo);
+	title->AddComponent<TitleController>();
 
 	Scene::Begin();
 }
