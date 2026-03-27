@@ -2,7 +2,7 @@
 
 #include <utility>
 
-// @brief キーボード入力としてライブラリが対応しているキーコードを定義し、入力システム全体で共通に使用されるキー列挙型です。
+// @brief キーボード入力として対応しているキーコードを定義し、入力システム全体で共通に使用されるキー列挙型
 enum class Keys : uint8_t {
 	A = 0x1e,
 	B = 0x30,
@@ -54,14 +54,14 @@ enum class Keys : uint8_t {
 	LeftArrow = 0xcb,
 };
 
-/// @brief ライブラリの入力システムで使用される、対応済みマウスボタン種別を定義した列挙型です。
+/// @brief 入力システムで使用される、対応済みマウスボタン種別を定義した列挙型
 enum class MouseButtons : uint8_t {
 	Left = 0,
 	Right,
 	Mid
 };
 
-/// @brief 入力（キーボードおよびマウス）の状態をフレーム単位で取得するための、ライブラリ入力管理クラス
+/// @brief 入力（キーボードおよびマウス）の状態をフレーム単位で取得するための、入力管理クラス
 class Input final {
 private:
 	Input() = delete;
