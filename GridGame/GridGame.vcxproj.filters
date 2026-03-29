@@ -104,6 +104,15 @@
     <ClCompile Include="src\Game\Title\TitleController.cpp">
       <Filter>src\Game\Title</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\TransitionManager.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Time.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\TimeImpl.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.hpp">
@@ -206,6 +215,18 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\Random.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SceneAPI.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TransitionManager.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Time.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TimeImpl.hpp">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

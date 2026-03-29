@@ -4,6 +4,7 @@
 #include "../../include/SceneManager.hpp"
 #include "../../include/InputSystem.hpp"
 #include "../../include/Input.hpp"
+#include "../../include/TimeImpl.hpp"
 #include "../../include/SampleScene.hpp"
 #include "../../include/Title.hpp"
 #include "../../include/Palette.hpp"
@@ -27,6 +28,8 @@ bool Application::Init() {
 
     _running = true;
 
+	TimeImpl::Init();
+
     // 初期シーン
     //SceneManager::Init<SampleScene>("Sample");
     SceneManager::Init<Title>("Title");
@@ -45,6 +48,7 @@ void Application::Update() {
     }
 
     // 更新
+    TimeImpl::Update();
     InputSystem::Update();
     SceneManager::Update();
 }

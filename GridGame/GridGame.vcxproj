@@ -27,7 +27,10 @@
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\InputSystem.cpp" />
     <ClCompile Include="src\Core\Text.cpp" />
+    <ClCompile Include="src\Core\Time.cpp" />
+    <ClCompile Include="src\Core\TimeImpl.cpp" />
     <ClCompile Include="src\Core\Transform.cpp" />
+    <ClCompile Include="src\Core\TransitionManager.cpp" />
     <ClCompile Include="src\Framework\Application.cpp" />
     <ClCompile Include="src\Framework\Scene.cpp" />
     <ClCompile Include="src\Framework\SceneManager.cpp" />
@@ -70,12 +73,16 @@
     <ClInclude Include="include\RandomImpl.hpp" />
     <ClInclude Include="include\SampleScene.hpp" />
     <ClInclude Include="include\Scene.hpp" />
+    <ClInclude Include="include\SceneAPI.hpp" />
     <ClInclude Include="include\SceneManager.hpp" />
     <ClInclude Include="include\SoundData.hpp" />
     <ClInclude Include="include\Text.hpp" />
+    <ClInclude Include="include\Time.hpp" />
+    <ClInclude Include="include\TimeImpl.hpp" />
     <ClInclude Include="include\Title.hpp" />
     <ClInclude Include="include\TitleController.hpp" />
     <ClInclude Include="include\Transform.hpp" />
+    <ClInclude Include="include\TransitionManager.hpp" />
     <ClInclude Include="include\Vector2.hpp" />
     <ClInclude Include="src\Core\Transition.hpp" />
   </ItemGroup>

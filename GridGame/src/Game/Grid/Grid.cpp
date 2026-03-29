@@ -5,7 +5,7 @@ Grid::Grid(int gridSize)
 	: _gridSize(gridSize)
 	, _cells(gridSize, std::vector<bool>(gridSize, false))
 {
-	for (int i = 0; i < _gridSize * _gridSize; ++i) {
+	for (auto i = 0; i < _gridSize * _gridSize; ++i) {
 		auto x = Random::Range(0, _gridSize);
 		auto y = Random::Range(0, _gridSize);
 
