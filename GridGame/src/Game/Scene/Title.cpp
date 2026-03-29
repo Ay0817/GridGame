@@ -7,7 +7,7 @@
 
 Title::Title(const std::string& name)
 	: Scene(name)
-	, _textInfo{ "Lights Out", nullptr, TextAlign::Center, Palette::Vspo::Ema }
+	, _textInfo{ "Lights Out", nullptr, TextAlign::Center, Palette::Basic::Black }
 	, _fontInfo{ 32, 2, FontType::ANTI_ALIASING }
 {}
 
