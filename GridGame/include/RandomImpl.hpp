@@ -90,7 +90,7 @@ namespace Internal {
         }
 
         /// @brief 0 ` 1
-        double Nextfloat() {
+        float Nextfloat() {
             return (Next64() >> FLOAT_SHIFT) * (1.f / (1ULL << FLOAT_BITS));
         }
 
