@@ -39,3 +39,7 @@ void Text::Draw() const {
 
     DrawStringToHandle(x, y, _textInfo.text.data(), _textInfo.color.ToUInt(), handle);
 }
+
+void Text::SetText(const std::string& text) {
+	_textInfo.text = text;
+}

@@ -40,4 +40,8 @@ public:
 
 	/// @brief 描画処理
 	virtual void Draw() const override;
+
+	/// @brief テキストを設定
+	/// @param text テキスト
+	void SetText(const std::string& text);
 };
