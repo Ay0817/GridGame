@@ -5,6 +5,8 @@
 #include "../../include/InputSystem.hpp"
 #include "../../include/Input.hpp"
 #include "../../include/SampleScene.hpp"
+#include "../../include/Title.hpp"
+#include "../../include/Palette.hpp"
 
 Application::Application()
     : _running(false)
@@ -26,7 +28,8 @@ bool Application::Init() {
     _running = true;
 
     // ‰ŠúƒV[ƒ“
-    SceneManager::Init<SampleScene>("Sample");
+    //SceneManager::Init<SampleScene>("Sample");
+    SceneManager::Init<Title>("Title");
 
     return true;
 }

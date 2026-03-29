@@ -30,6 +30,9 @@
     <Filter Include="src\Game\Scene">
       <UniqueIdentifier>{e877dbfc-fa95-4898-9837-94a7672d06b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Game\Title">
+      <UniqueIdentifier>{9b848449-eab8-49a8-a5cb-63da9ae52150}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\GameObject.cpp">
@@ -85,6 +88,21 @@
     </ClCompile>
     <ClCompile Include="src\Audio\ActiveSound.cpp">
       <Filter>src\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resource\Font.cpp">
+      <Filter>src\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Transform.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Text.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Scene\Title.cpp">
+      <Filter>src\Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Title\TitleController.cpp">
+      <Filter>src\Game\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +167,45 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\ActiveSound.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Title.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Font.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Text.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector2.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Transform.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Palette.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Color.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TitleController.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Transition.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Concepts.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RandomImpl.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Random.hpp">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

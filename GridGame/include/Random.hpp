@@ -14,17 +14,17 @@ public:
 
 	/// @brief 乱数を生成 [0, max - 1]
 	static int Next(int max) {
-		Internal::rng.Next(max);
+		return Internal::rng.Next(max);
 	}
 
 	/// @brief 乱数を生成 [0, 1]
 	static float Value() {
-		Internal::rng.Nextfloat();
+		return Internal::rng.Nextfloat();
 	}
 
 	/// @brief 乱数を生成 [0, 1]
 	static double ValueDouble() {
-		Internal::rng.NextDouble();
+		return Internal::rng.NextDouble();
 	}
 
 	/// @brief 乱数を生成 [min, max]
@@ -52,6 +52,11 @@ public:
 		}
 
 		return min + (max - min) * ValueDouble();
+	}
+
+	/// @brief 確率に基づいて true / false を返す
+	static bool Chance(float probability = 0.5f) {
+		return Value() < probability;
 	}
 
 	/// @brief 配列シャッフル

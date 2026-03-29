@@ -26,6 +26,8 @@
     <ClCompile Include="src\Core\GameObjectManager.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\InputSystem.cpp" />
+    <ClCompile Include="src\Core\Text.cpp" />
+    <ClCompile Include="src\Core\Transform.cpp" />
     <ClCompile Include="src\Framework\Application.cpp" />
     <ClCompile Include="src\Framework\Scene.cpp" />
     <ClCompile Include="src\Framework\SceneManager.cpp" />
@@ -34,8 +36,11 @@
     <ClCompile Include="src\Game\Grid\GridObject.cpp" />
     <ClCompile Include="src\Game\Grid\GridRenderer.cpp" />
     <ClCompile Include="src\Game\Scene\SampleScene.cpp" />
+    <ClCompile Include="src\Game\Scene\Title.cpp" />
+    <ClCompile Include="src\Game\Title\TitleController.cpp" />
     <ClCompile Include="src\Resource\Asset.cpp" />
     <ClCompile Include="src\Resource\AssetManager.cpp" />
+    <ClCompile Include="src\Resource\Font.cpp" />
     <ClCompile Include="src\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -45,7 +50,10 @@
     <ClInclude Include="include\AssetResolver.hpp" />
     <ClInclude Include="include\AssetManager.hpp" />
     <ClInclude Include="include\Audio.hpp" />
+    <ClInclude Include="include\Color.hpp" />
     <ClInclude Include="include\Component.hpp" />
+    <ClInclude Include="include\Concepts.hpp" />
+    <ClInclude Include="include\Font.hpp" />
     <ClInclude Include="include\GameObject.hpp" />
     <ClInclude Include="include\GameObjectManager.hpp" />
     <ClInclude Include="include\Grid.hpp" />
@@ -56,10 +64,20 @@
     <ClInclude Include="include\Hash.hpp" />
     <ClInclude Include="include\Input.hpp" />
     <ClInclude Include="include\InputSystem.hpp" />
+    <ClInclude Include="include\Math.hpp" />
+    <ClInclude Include="include\Palette.hpp" />
+    <ClInclude Include="include\Random.hpp" />
+    <ClInclude Include="include\RandomImpl.hpp" />
     <ClInclude Include="include\SampleScene.hpp" />
     <ClInclude Include="include\Scene.hpp" />
     <ClInclude Include="include\SceneManager.hpp" />
     <ClInclude Include="include\SoundData.hpp" />
+    <ClInclude Include="include\Text.hpp" />
+    <ClInclude Include="include\Title.hpp" />
+    <ClInclude Include="include\TitleController.hpp" />
+    <ClInclude Include="include\Transform.hpp" />
+    <ClInclude Include="include\Vector2.hpp" />
+    <ClInclude Include="src\Core\Transition.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

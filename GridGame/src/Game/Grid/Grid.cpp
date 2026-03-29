@@ -1,9 +1,17 @@
 #include "../../../include/Grid.hpp"
+#include "../../../include/Random.hpp"
 
 Grid::Grid(int gridSize)
 	: _gridSize(gridSize)
 	, _cells(gridSize, std::vector<bool>(gridSize, false))
-{}
+{
+	for (int i = 0; i < _gridSize * _gridSize; ++i) {
+		auto x = Random::Range(0, _gridSize);
+		auto y = Random::Range(0, _gridSize);
+
+		Toggle(x, y);
+	}
+}
 
 void Grid::Toggle(int x, int y) {
 	if (x < 0 || x >= _gridSize || y < 0 || y >= _gridSize) {
