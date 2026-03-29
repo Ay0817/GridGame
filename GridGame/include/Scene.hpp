@@ -39,10 +39,4 @@ public:
 	T* AddObject(Args&&... args) {
 		return _gameObjectManager->Create<T>(std::forward<Args>(args)...);
 	}
-
-	/// @brief シーン名を取得する
-	/// @return シーン名
-	std::string GetName() const { 
-		return _name; 
-	}
 };
