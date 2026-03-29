@@ -4,9 +4,11 @@
 #include "../../include/SceneManager.hpp"
 #include "../../include/InputSystem.hpp"
 #include "../../include/Input.hpp"
+#include "../../include/TimeImpl.hpp"
 #include "../../include/SampleScene.hpp"
 #include "../../include/Title.hpp"
 #include "../../include/Palette.hpp"
+#include "../../include/TransitionManager.hpp"
 
 Application::Application()
     : _running(false)
@@ -18,6 +20,7 @@ bool Application::Init() {
     ChangeWindowMode(true);
     SetWindowTextDX("Lights Out");
     SetGraphMode(800, 600, 32);
+	SetBackgroundColor(Palette::Basic::White.r, Palette::Basic::White.g, Palette::Basic::White.b);
 
     if (DxLib_Init() == -1) {
         return false;
@@ -26,6 +29,8 @@ bool Application::Init() {
     SetDrawScreen(DX_SCREEN_BACK);
 
     _running = true;
+
+    TimeImpl::Init();
 
     // 初期シーン
     //SceneManager::Init<SampleScene>("Sample");
@@ -45,7 +50,9 @@ void Application::Update() {
     }
 
     // 更新
+    TimeImpl::Update();
     InputSystem::Update();
+    TransitionManager::Update();
     SceneManager::Update();
 }
 
@@ -54,6 +61,7 @@ void Application::Draw() {
 
     // 描画
     SceneManager::Draw();
+    TransitionManager::Draw();
 
     ScreenFlip();
 }
