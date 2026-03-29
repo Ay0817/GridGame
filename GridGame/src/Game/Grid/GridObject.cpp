@@ -11,8 +11,10 @@ GridObject::GridObject(const std::string& name, int size)
 
 void GridObject::Begin() {
 	_clearSound.audio = GetComponent<Audio>();
+	_playTimer = GetComponent<LightsOutPlayTimer>();
 
 	assert(_clearSound.audio != nullptr);
+	assert(_playTimer != nullptr);
 
 	_clearSound.soundData = AssetResolver::Load<SoundData>("Clear", "Resources/Sounds/SE/Clear.mp3");
 }
@@ -22,6 +24,10 @@ void GridObject::Update() {
 		_isCleared = true;
 		if (_clearSound.audio) {
 			_clearSound.audio->Play(_clearSound.soundData);
+		}
+
+		if (_playTimer) {
+			_playTimer->Stop();
 		}
 	}
 	

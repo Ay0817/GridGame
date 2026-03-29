@@ -5,12 +5,14 @@
 #include "GameObject.hpp"
 #include "Grid.hpp"
 #include "Audio.hpp"
+#include "LightsOutPlayTimer.hpp"
 
 /// @brief グリッドゲーム本体
 class GridObject final : public GameObject {
 private:
 	Grid _grid;            // グリッドのコアデータ
 	AudioPlay _clearSound; // クリア時のサウンド 
+	LightsOutPlayTimer* _playTimer = nullptr; // プレイ時間計測用
 
 	bool _isCleared = false; // クリア済みか？
 public:
