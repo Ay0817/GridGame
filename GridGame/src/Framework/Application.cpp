@@ -9,31 +9,26 @@
 #include "../../include/Title.hpp"
 #include "../../include/Palette.hpp"
 #include "../../include/TransitionManager.hpp"
+#include "../../include/DxLap.hpp"
 
 Application::Application()
     : _running(false)
 {}
 
 bool Application::Init() {
-    SetOutApplicationLogValidFlag(false);
-    SetAlwaysRunFlag(true);
-    ChangeWindowMode(true);
-    SetWindowTextDX("Lights Out");
-    SetGraphMode(800, 600, 32);
-	SetBackgroundColor(Palette::Basic::White.r, Palette::Basic::White.g, Palette::Basic::White.b);
-
-    if (DxLib_Init() == -1) {
+    if (!DxLap::Init(DxLap::Config{}
+        .SetTitle("Lights Out")
+        .SetWindowMode(true)
+        .SetAlwaysRun(true)
+        .SetWindowSize(800, 600)
+        .EnableLog(false)
+        .SetBackground(Palette::Basic::White)
+    )) {
         return false;
     }
-
-    SetDrawScreen(DX_SCREEN_BACK);
-
     _running = true;
 
     TimeImpl::Init();
-
-    // èâä˙ÉVÅ[Éì
-    //SceneManager::Init<SampleScene>("Sample");
     SceneManager::Init<Title>("Title");
 
     return true;
