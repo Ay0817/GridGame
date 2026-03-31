@@ -3,16 +3,16 @@
 
 #include "../../../include/LightsOutPlayTimer.hpp"
 #include "../../../include/Time.hpp"
-#include "../../../include/GridObject.hpp"
+#include "../../../include/GameObject.hpp"
 
 LightsOutPlayTimer::LightsOutPlayTimer()
     : Component()
 {}
 
 void LightsOutPlayTimer::Begin() {
-    auto obj = dynamic_cast<GridObject*>(GetOwner());
+    auto owner = GetOwner();
 
-	_text = obj->GetComponent<Text>();
+	_text = owner->GetComponent<Text>();
 
     assert(_text != nullptr);
 }
