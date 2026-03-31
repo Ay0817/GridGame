@@ -81,7 +81,6 @@ public:
 		auto ptr = comp.get();
 
 		comp->SetOwner(this);
-		comp->Begin();
 
 		_components.emplace_back(std::move(comp));
 
