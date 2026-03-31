@@ -30,10 +30,6 @@ void GameObjectManager::Begin() {
 		}
 
 		object->Begin();
-
-		for (auto& comp : object->GetComponents()) {
-			comp->Begin();
-		}
 	}
 }
 
@@ -44,10 +40,6 @@ void GameObjectManager::Update() {
 		}
 
 		object->Update();
-
-		for (auto& comp : object->GetComponents()) {
-			comp->Update();
-		}
 	}
 }
 
@@ -58,10 +50,6 @@ void GameObjectManager::LateUpdate() {
 		}
 
 		object->LateUpdate();
-
-		for (auto& comp : object->GetComponents()) {
-			comp->LateUpdate();
-		}
 	}
 }
 
@@ -72,10 +60,6 @@ void GameObjectManager::Draw() const {
 		}
 
 		object->Draw();
-
-		for (auto& comp : object->GetComponents()) {
-			comp->Draw();
-		}
 	}
 }
 
@@ -86,10 +70,6 @@ void GameObjectManager::End() {
 		}
 
 		object->End();
-
-		for (auto& comp : object->GetComponents()) {
-			comp->End();
-		}
 	}
 }
 
