@@ -3,6 +3,7 @@
 #include "Component.hpp"
 #include "Grid.hpp"
 #include "GridConfig.hpp"
+#include "Color.hpp"
 
 /// @brief グリッドの描画を担当
 class GridRenderer final : public Component {
@@ -10,9 +11,9 @@ private:
 	Grid* _grid = nullptr;  // グリッドへのポインタ
 	GridConfig _gridConfig; // グリッドの構成
 
-	int _lineColor = 0; // グリッドの線の色
-	int _offColor = 0;  // off の時の色
-	int _onColor = 0;   // on の時の色
+	Color _lineColor; // グリッドの線の色
+	Color _offColor;  // off の時の色
+	Color _onColor;   // on の時の色
 private:
 	/// @brief セルの描画
 	/// @param grid 描画対象のグリッド

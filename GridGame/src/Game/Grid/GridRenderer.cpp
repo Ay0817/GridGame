@@ -1,12 +1,15 @@
 #include <DxLib.h>
 #include <cassert>
 
+#include "../../../include/GameObject.hpp"
 #include "../../../include/GridRenderer.hpp"
-#include "../../../include/GridObject.hpp"
 
 GridRenderer::GridRenderer(const GridConfig& config)
 	: Component()
 	, _gridConfig(config)
+	, _lineColor(Color(0, 0, 0, 255))
+	, _offColor(Color(255, 255, 255, 255))
+	, _onColor(Color(180, 241, 249, 255))
 {}
 
 void GridRenderer::DrawCells(const Grid& grid, int startX, int startY) const {
@@ -19,7 +22,7 @@ void GridRenderer::DrawCells(const Grid& grid, int startX, int startY) const {
 			auto top = startY + y * _gridConfig.cellSize;
 			auto color = grid.GetCell(x, y) ? _onColor : _offColor;
 
-			DrawBox(left, top, left + _gridConfig.cellSize, top + _gridConfig.cellSize, color, TRUE);
+			DrawBox(left, top, left + _gridConfig.cellSize, top + _gridConfig.cellSize, color.ToUInt(), TRUE);
 		}
 	}
 }
@@ -29,26 +32,23 @@ void GridRenderer::DrawGridLines(int gridSize, int startX, int startY) const {
 	for (int x = 0; x <= gridSize; ++x) {
 		auto posX = startX + x * _gridConfig.cellSize;
 
-		DrawLine(posX, startY, posX, startY + gridSize * _gridConfig.cellSize, _lineColor);
+		DrawLine(posX, startY, posX, startY + gridSize * _gridConfig.cellSize, _lineColor.ToUInt());
 	}
 
 	// ‰¡ü
 	for (int y = 0; y <= gridSize; ++y) {
 		auto posY = startY + y * _gridConfig.cellSize;
 
-		DrawLine(startX, posY, startX + gridSize * _gridConfig.cellSize, posY, _lineColor);
+		DrawLine(startX, posY, startX + gridSize * _gridConfig.cellSize, posY, _lineColor.ToUInt());
 	}
 }
 
 void GridRenderer::Begin() {
-	auto obj = dynamic_cast<GridObject*>(GetOwner());
-	_grid = &obj->GetGrid();
+	auto owner = GetOwner();
+
+	_grid = owner->GetComponent<Grid>();
 
 	assert(_grid != nullptr);
-
-	_lineColor = GetColor(0, 0, 0);
-	_offColor  = GetColor(255, 255, 255);
-	_onColor   = GetColor(180, 241, 249);
 }
 
 void GridRenderer::Draw() const {
