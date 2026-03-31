@@ -1,10 +1,10 @@
 #include "../../../include/TitleController.hpp"
 #include "../../../include/Input.hpp"
-#include "../../../include/SampleScene.hpp"
+#include "../../../include/PlayScene.hpp"
 #include "../../../include/SceneAPI.hpp"
 
 void TitleController::Update() {
 	if (Input::GetMouseButtonUp(MouseButtons::Left)) {
-		SceneAPI::ChangeWithTransition<SampleScene>("Sample");
+		SceneAPI::ChangeWithTransition<PlayScene>("Play");
 	}
 }
