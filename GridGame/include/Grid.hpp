@@ -2,8 +2,10 @@
 
 #include <vector>
 
-/// @brief Lights Out 用のグリッドデータを管理するクラス
-class Grid final {
+#include "Component.hpp"
+
+/// @brief グリッドデータを管理するクラス
+class Grid final : public Component {
 private:
 	int _gridSize; // グリッドのサイズ
 
@@ -12,6 +14,9 @@ public:
 	/// @brief コンストラクタ
 	/// @param gridSize グリッドのサイズ
 	Grid(int gridSize = 3);
+
+	/// @brief 初期化処理
+	virtual void Begin() override;
 
 	/// @brief 指定したセルの状態を反転 on/off のトグル
 	/// @param x X座標
