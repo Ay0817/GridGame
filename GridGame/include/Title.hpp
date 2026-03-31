@@ -7,8 +7,7 @@
 /// @brief タイトルシーン
 class Title final : public Scene {
 private:
-	TextInfo _textInfo;
-	FontInfo _fontInfo;
+
 public:
 	/// @brief コンストラクタ
 	/// @param name シーン名
