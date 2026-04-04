@@ -8,12 +8,13 @@
 class Grid final : public Component {
 private:
 	int _gridSize; // グリッドのサイズ
+	bool _notRandom; // ランダムに初期化しないかどうか
 
 	std::vector<std::vector<bool>> _cells; // 各セルの状態
 public:
 	/// @brief コンストラクタ
 	/// @param gridSize グリッドのサイズ
-	Grid(int gridSize = 3);
+	Grid(int gridSize = 3, bool notRnd = false);
 
 	/// @brief 初期化処理
 	virtual void Begin() override;

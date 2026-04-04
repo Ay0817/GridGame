@@ -230,4 +230,10 @@ struct Vector2 {
     static constexpr Vector2 left() noexcept {
         return Vector2(-1.f, 0.f);
     }
+
+    /// @return {0.5f, 0.5f}
+    [[nodiscard]]
+    static constexpr Vector2 half() noexcept {
+        return Vector2(0.5f, 0.5f);
+    }
 };

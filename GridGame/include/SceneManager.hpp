@@ -8,6 +8,8 @@
 #include <string_view>
 #include <format>
 
+#include "Action.hpp"
+
 class Scene; // 前方宣言
 
 template <typename T>
@@ -23,6 +25,15 @@ private:
 
 	/// @brief シーン切り替え処理
 	static void ProcessLoadScene();
+public:
+	/// @brief シーン切り替え時に発生するイベント
+	static inline Action<> OnSceneChanging;
+
+	/// @brief シーンロード時に発生するイベント
+	static inline Action<> OnSceneLoaded;
+
+	/// @brief シーンアンロード時に発生するイベント
+	static inline Action<> OnSceneUnloaded;
 public:
 	/// @brief 初期化処理
 	/// @tparam T 最初の Scene の型 

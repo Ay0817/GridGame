@@ -4,7 +4,7 @@
 #include "../../../include/SceneAPI.hpp"
 
 void TitleController::Update() {
-	if (Input::GetMouseButtonUp(MouseButtons::Left)) {
+	if (Input::GetMouseButtonUp(MouseButtons::Right)) {
 		SceneAPI::ChangeWithTransition<PlayScene>("Play");
 	}
 }

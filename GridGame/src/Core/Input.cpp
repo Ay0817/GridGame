@@ -25,10 +25,10 @@ bool Input::GetMouseButtonUp(MouseButtons button) {
 	return InputSystem::mouseInputs[std::to_underlying(button)] == InputSystem::State::RELEASING;
 }
 
-std::pair<int, int> Input::GetMousePosition() {
+Vector2 Input::GetMousePosition() {
 	return InputSystem::position;
 }
 
-std::pair<int, int> Input::GetMouseDelta() {
+Vector2 Input::GetMouseDelta() {
 	return InputSystem::delta;
 }

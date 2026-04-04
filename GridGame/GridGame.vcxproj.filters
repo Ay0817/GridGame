@@ -33,6 +33,9 @@
     <Filter Include="src\Game\Title">
       <UniqueIdentifier>{9b848449-eab8-49a8-a5cb-63da9ae52150}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Game\LightsOut">
+      <UniqueIdentifier>{3ca62068-40f7-4fbf-926a-5615c61d1691}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\GameObject.cpp">
@@ -56,16 +59,7 @@
     <ClCompile Include="src\Framework\SceneManager.cpp">
       <Filter>src\Framework</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\Scene\SampleScene.cpp">
-      <Filter>src\Game\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\Game\Grid\Grid.cpp">
-      <Filter>src\Game\Grid</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Grid\GridInput.cpp">
-      <Filter>src\Game\Grid</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Grid\GridObject.cpp">
       <Filter>src\Game\Grid</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\Grid\GridRenderer.cpp">
@@ -104,6 +98,60 @@
     <ClCompile Include="src\Game\Title\TitleController.cpp">
       <Filter>src\Game\Title</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\LightsOut\LightsOut.cpp">
+      <Filter>src\Game\LightsOut</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\LightsOut\LightsOutInput.cpp">
+      <Filter>src\Game\LightsOut</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\DxLap.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Time.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\TimeImpl.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\TransitionManager.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Scene\PlayScene.cpp">
+      <Filter>src\Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\LightsOut\LightsOutPlayTimer.cpp">
+      <Filter>src\Game\LightsOut</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Title\TitleBgAnimation.cpp">
+      <Filter>src\Game\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Title\TitlePromptAnimation.cpp">
+      <Filter>src\Game\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resource\Image.cpp">
+      <Filter>src\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Sprite.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Renderer.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\SpriteRenderer.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\ButtonBase.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\RectTransform.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\GeneralButton.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\GestureDetector.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.hpp">
@@ -124,12 +172,6 @@
     <ClInclude Include="include\GridConfig.hpp">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\GridInput.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GridObject.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="include\GridRenderer.hpp">
       <Filter>include</Filter>
     </ClInclude>
@@ -137,9 +179,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\InputSystem.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SampleScene.hpp">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\Scene.hpp">
@@ -196,9 +235,6 @@
     <ClInclude Include="include\TitleController.hpp">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Transition.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="include\Concepts.hpp">
       <Filter>include</Filter>
     </ClInclude>
@@ -208,5 +244,77 @@
     <ClInclude Include="include\Random.hpp">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\DxLap.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LightsOutPlayTimer.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SceneAPI.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Time.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TimeImpl.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TransitionManager.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LightsOut.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LightsOutInput.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PlayScene.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TitleBgAnimation.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TitlePromptAnimation.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Action.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LightsOutTutorial.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rect.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ButtonBase.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GeneralButton.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LabelButton.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Image.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Sprite.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SpriteRenderer.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Renderer.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RectTransform.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GestureDetector.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="include\memo.txt" />
   </ItemGroup>
 </Project>

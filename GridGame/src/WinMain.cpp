@@ -1,6 +1,6 @@
 #include <Windows.h>
 
-#include "../include/Application.hpp"
+#include <Application.hpp>
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     Application app;

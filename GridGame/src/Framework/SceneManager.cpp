@@ -20,7 +20,9 @@ void SceneManager::Draw() {
 }
 
 void SceneManager::End() {
-
+	OnSceneChanging.Clear();
+	OnSceneLoaded.Clear();
+	OnSceneUnloaded.Clear();
 }
 
 void SceneManager::LoadScene(std::unique_ptr<Scene> scene) {
@@ -44,8 +46,13 @@ void SceneManager::ProcessLoadScene() {
 		return;
 	}
 
+	OnSceneChanging.Invoke();
+
 	if (!_scenes.empty()) {
 		_scenes.back()->End();
+
+		OnSceneUnloaded.Invoke();
+
 		_scenes.pop_back();
 	}
 
@@ -53,4 +60,6 @@ void SceneManager::ProcessLoadScene() {
 	_nextScene.reset();
 
 	_scenes.back()->Begin();
+
+	OnSceneLoaded.Invoke();
 }

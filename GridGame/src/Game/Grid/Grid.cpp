@@ -1,18 +1,21 @@
 #include "../../../include/Grid.hpp"
 #include "../../../include/Random.hpp"
 
-Grid::Grid(int gridSize)
+Grid::Grid(int gridSize, bool notRand)
 	: Component()
 	, _gridSize(gridSize)
+	, _notRandom(notRand)
 	, _cells(gridSize, std::vector<bool>(gridSize, false))
 {}
 
 void Grid::Begin() {
-	for (int i = 0; i < _gridSize * _gridSize; ++i) {
-		auto x = Random::Range(0, _gridSize);
-		auto y = Random::Range(0, _gridSize);
+	if (!_notRandom) {
+		for (int i = 0; i < _gridSize * _gridSize; ++i) {
+			auto x = Random::Range(0, _gridSize);
+			auto y = Random::Range(0, _gridSize);
 
-		Toggle(x, y);
+			Toggle(x, y);
+		}
 	}
 }
 

@@ -142,12 +142,20 @@ namespace DxLap {
 			DxLib::SetWindowSize(width, height);
 		}
 
-		Vector2 GetSize() {
+		Vector2 GetSizeF() {
 			int w, h;
 
 			DxLib::GetWindowSize(&w, &h);
 
 			return Vector2(static_cast<float>(w), static_cast<float>(h));
+		}
+
+		std::pair<int, int> GetSize() {
+			int w, h;
+
+			DxLib::GetWindowSize(&w, &h);
+
+			return { w, h };
 		}
 	}
 

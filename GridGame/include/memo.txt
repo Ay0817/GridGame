@@ -1,0 +1,11 @@
+LightsOutTutorial
+
+page.1 // ルール
+page.2 // 操作方法
+page.3 // tips
+
+3カウントで開始
+
+開始するときに Component を有効にする
+
+page を切り替えるときは Button を押す(サウンド有)

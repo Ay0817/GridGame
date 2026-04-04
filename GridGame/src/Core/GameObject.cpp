@@ -18,19 +18,21 @@ GameObject::GameObject(const std::string & name, const Transform & transform)
 {}
 
 void GameObject::Begin() {
-	if (_destroyed) {
+	if (_destroyed || !_active) {
 		return;
 	}
 
 	for (auto& component : _components) {
-		component->Begin();
+		if (component->GetEnable()) {
+			component->Begin();
+		}
 	}
 
 	_isInit = true;
 }
 
 void GameObject::Update() {
-	if (_destroyed) {
+	if (_destroyed || !_active) {
 		return;
 	}
 
@@ -39,33 +41,41 @@ void GameObject::Update() {
 	}
 
 	for (auto& component : _components) {
-		component->Update();
+		if (component->GetEnable()) {
+			component->Update();
+		}
 	}
 }
 
 void GameObject::LateUpdate() {
-	if (_destroyed) {
+	if (_destroyed || !_active) {
 		return;
 	}
 
 	for (auto& component : _components) {
-		component->LateUpdate();
+		if (component->GetEnable()) {
+			component->LateUpdate();
+		}
 	}
 }
 
 void GameObject::Draw() const {
-	if (_destroyed) {
+	if (_destroyed || !_active) {
 		return;
 	}
 
 	for (auto& component : _components) {
-		component->Draw();
+		if (component->GetEnable()) {
+			component->Draw();
+		}
 	}
 }
 
 void GameObject::End() {
 	for (auto& component : _components) {
-		component->End();
+		if (component->GetEnable()) {
+			component->End();
+		}
 	}
 }
 

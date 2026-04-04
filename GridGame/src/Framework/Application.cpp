@@ -5,7 +5,6 @@
 #include "../../include/InputSystem.hpp"
 #include "../../include/Input.hpp"
 #include "../../include/TimeImpl.hpp"
-#include "../../include/SampleScene.hpp"
 #include "../../include/Title.hpp"
 #include "../../include/Palette.hpp"
 #include "../../include/TransitionManager.hpp"
@@ -20,7 +19,7 @@ bool Application::Init() {
         .SetTitle("Lights Out")
         .SetWindowMode(true)
         .SetAlwaysRun(true)
-        .SetWindowSize(800, 600)
+        .SetWindowSize(1280, 720)
         .EnableLog(false)
         .SetBackground(Palette::Basic::White)
     )) {

@@ -22,62 +22,99 @@
     <ClCompile Include="src\Audio\ActiveSound.cpp" />
     <ClCompile Include="src\Audio\Audio.cpp" />
     <ClCompile Include="src\Audio\SoundData.cpp" />
+    <ClCompile Include="src\Core\ButtonBase.cpp" />
+    <ClCompile Include="src\Core\DxLap.cpp" />
     <ClCompile Include="src\Core\GameObject.cpp" />
     <ClCompile Include="src\Core\GameObjectManager.cpp" />
+    <ClCompile Include="src\Core\GeneralButton.cpp" />
+    <ClCompile Include="src\Core\GestureDetector.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\InputSystem.cpp" />
+    <ClCompile Include="src\Core\RectTransform.cpp" />
+    <ClCompile Include="src\Core\Renderer.cpp" />
+    <ClCompile Include="src\Core\Sprite.cpp" />
+    <ClCompile Include="src\Core\SpriteRenderer.cpp" />
     <ClCompile Include="src\Core\Text.cpp" />
+    <ClCompile Include="src\Core\Time.cpp" />
+    <ClCompile Include="src\Core\TimeImpl.cpp" />
     <ClCompile Include="src\Core\Transform.cpp" />
+    <ClCompile Include="src\Core\TransitionManager.cpp" />
     <ClCompile Include="src\Framework\Application.cpp" />
     <ClCompile Include="src\Framework\Scene.cpp" />
     <ClCompile Include="src\Framework\SceneManager.cpp" />
     <ClCompile Include="src\Game\Grid\Grid.cpp" />
-    <ClCompile Include="src\Game\Grid\GridInput.cpp" />
-    <ClCompile Include="src\Game\Grid\GridObject.cpp" />
     <ClCompile Include="src\Game\Grid\GridRenderer.cpp" />
-    <ClCompile Include="src\Game\Scene\SampleScene.cpp" />
+    <ClCompile Include="src\Game\LightsOut\LightsOut.cpp" />
+    <ClCompile Include="src\Game\LightsOut\LightsOutInput.cpp" />
+    <ClCompile Include="src\Game\LightsOut\LightsOutPlayTimer.cpp" />
+    <ClCompile Include="src\Game\Scene\PlayScene.cpp" />
     <ClCompile Include="src\Game\Scene\Title.cpp" />
+    <ClCompile Include="src\Game\Title\TitleBgAnimation.cpp" />
     <ClCompile Include="src\Game\Title\TitleController.cpp" />
+    <ClCompile Include="src\Game\Title\TitlePromptAnimation.cpp" />
     <ClCompile Include="src\Resource\Asset.cpp" />
     <ClCompile Include="src\Resource\AssetManager.cpp" />
     <ClCompile Include="src\Resource\Font.cpp" />
+    <ClCompile Include="src\Resource\Image.cpp" />
     <ClCompile Include="src\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Action.hpp" />
     <ClInclude Include="include\ActiveSound.hpp" />
     <ClInclude Include="include\Application.hpp" />
     <ClInclude Include="include\Asset.hpp" />
     <ClInclude Include="include\AssetResolver.hpp" />
     <ClInclude Include="include\AssetManager.hpp" />
     <ClInclude Include="include\Audio.hpp" />
+    <ClInclude Include="include\ButtonBase.hpp" />
     <ClInclude Include="include\Color.hpp" />
     <ClInclude Include="include\Component.hpp" />
     <ClInclude Include="include\Concepts.hpp" />
+    <ClInclude Include="include\DxLap.hpp" />
     <ClInclude Include="include\Font.hpp" />
     <ClInclude Include="include\GameObject.hpp" />
     <ClInclude Include="include\GameObjectManager.hpp" />
+    <ClInclude Include="include\GeneralButton.hpp" />
+    <ClInclude Include="include\GestureDetector.hpp" />
     <ClInclude Include="include\Grid.hpp" />
     <ClInclude Include="include\GridConfig.hpp" />
-    <ClInclude Include="include\GridInput.hpp" />
-    <ClInclude Include="include\GridObject.hpp" />
     <ClInclude Include="include\GridRenderer.hpp" />
     <ClInclude Include="include\Hash.hpp" />
+    <ClInclude Include="include\Image.hpp" />
     <ClInclude Include="include\Input.hpp" />
     <ClInclude Include="include\InputSystem.hpp" />
+    <ClInclude Include="include\LabelButton.hpp" />
+    <ClInclude Include="include\LightsOut.hpp" />
+    <ClInclude Include="include\LightsOutInput.hpp" />
+    <ClInclude Include="include\LightsOutPlayTimer.hpp" />
+    <ClInclude Include="include\LightsOutTutorial.hpp" />
     <ClInclude Include="include\Math.hpp" />
     <ClInclude Include="include\Palette.hpp" />
+    <ClInclude Include="include\PlayScene.hpp" />
     <ClInclude Include="include\Random.hpp" />
     <ClInclude Include="include\RandomImpl.hpp" />
-    <ClInclude Include="include\SampleScene.hpp" />
+    <ClInclude Include="include\Rect.hpp" />
+    <ClInclude Include="include\RectTransform.hpp" />
+    <ClInclude Include="include\Renderer.hpp" />
     <ClInclude Include="include\Scene.hpp" />
+    <ClInclude Include="include\SceneAPI.hpp" />
     <ClInclude Include="include\SceneManager.hpp" />
     <ClInclude Include="include\SoundData.hpp" />
+    <ClInclude Include="include\Sprite.hpp" />
+    <ClInclude Include="include\SpriteRenderer.hpp" />
     <ClInclude Include="include\Text.hpp" />
+    <ClInclude Include="include\Time.hpp" />
+    <ClInclude Include="include\TimeImpl.hpp" />
     <ClInclude Include="include\Title.hpp" />
+    <ClInclude Include="include\TitleBgAnimation.hpp" />
     <ClInclude Include="include\TitleController.hpp" />
+    <ClInclude Include="include\TitlePromptAnimation.hpp" />
     <ClInclude Include="include\Transform.hpp" />
+    <ClInclude Include="include\TransitionManager.hpp" />
     <ClInclude Include="include\Vector2.hpp" />
-    <ClInclude Include="src\Core\Transition.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="include\memo.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
@@ -166,7 +203,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp23</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\DxLib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;C:\DxLib</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -184,7 +221,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\DxLib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;C:\DxLib</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>

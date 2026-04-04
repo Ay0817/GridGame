@@ -6,8 +6,8 @@
 std::array<InputSystem::State, 256> InputSystem::keyInputs = {};
 std::array<InputSystem::State, 3> InputSystem::mouseInputs = {};
 
-std::pair<int, int> InputSystem::position = {};
-std::pair<int, int> InputSystem::delta = {};
+Vector2 InputSystem::position = {};
+Vector2 InputSystem::delta = {};
 
 InputSystem::State InputSystem::NextState(State current, bool pressd) noexcept {
 	if (pressd) {
@@ -30,10 +30,9 @@ void InputSystem::Update() {
 	int mx, my;
 	DxLib::GetMousePoint(&mx, &my);
 
-	auto newPos = std::make_pair(mx, my);
+	auto newPos = Vector2(mx, my);
 
-	delta.first = newPos.first - position.first;
-	delta.second = newPos.second - position.second;
+	delta = newPos - position;
 
 	position = newPos;
 

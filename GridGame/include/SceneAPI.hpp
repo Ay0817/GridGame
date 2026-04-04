@@ -6,6 +6,7 @@
 #include "SceneManager.hpp"
 #include "Scene.hpp"
 #include "TransitionManager.hpp"
+#include "Action.hpp"
 
 namespace SceneAPI {
 	/// @brief シーンを切り替える
@@ -13,7 +14,7 @@ namespace SceneAPI {
 	/// @tparam T 切り替えるシーンの型
 	/// @param ...args 切り替えるシーンの引数
 	template<IsScene T, typename... Args>
-	void Change(Args&&... args) {
+	static inline void Change(Args&&... args) {
 		SceneManager::LoadScene(std::make_unique<T>(std::forward<Args>(args)...));
 	}
 
@@ -22,7 +23,7 @@ namespace SceneAPI {
 	/// @tparam T 切り替えるシーンの型
 	/// @param ...args 切り替えるシーンの引数
 	template<IsScene T, typename... Args>
-	void ChangeWithTransition(Args&&... args) {
+	static inline void ChangeWithTransition(Args&&... args) {
 		if (TransitionManager::IsPlaying()) {
 			return;
 		}
@@ -35,9 +36,22 @@ namespace SceneAPI {
 
 	/// @brief 現在のシーン名を取得する
 	/// @return 現在のシーン名
-	std::string GetCurrentSceneName() {
-		auto scene = SceneManager::GetCurrentScene();
+	static inline std::string GetCurrentSceneName() {
+		return SceneManager::GetCurrentScene()->GetName();
+	}
 
-		return scene ? scene->GetName() : "No Scene";
+	/// @brief シーン切り替え前のイベント
+	static inline Action<>& OnSceneChanging(){
+		return SceneManager::OnSceneChanging;
+	}
+
+	/// @brief シーン切り替え後のイベント
+	static inline Action<>& OnSceneChanged() {
+		return SceneManager::OnSceneLoaded;
+	}
+
+	/// @brief シーンアンロード時のイベント
+	static inline Action<>& OnSceneUnloaded() {
+		return SceneManager::OnSceneUnloaded;
 	}
 }

@@ -8,11 +8,29 @@
 #include "Font.hpp"
 #include "Color.hpp"
 
-/// @brief 
-enum class TextAlign {
+/// @brief 横方向
+enum class HorizontalAlign {
+	None,
 	Left,
-	Center,
+	Mid,
 	Right
+};
+
+/// @brief 縦方向
+enum class VerticalAlign {
+	None,
+	Top,
+	Mid,
+	Bot
+};
+
+/// @brief テキストの配置
+struct TextAlign {
+	HorizontalAlign horizontal;
+	VerticalAlign vertical;
+
+	TextAlign(HorizontalAlign h = HorizontalAlign::Mid, VerticalAlign v = VerticalAlign::Mid)
+		: horizontal(h), vertical(v) {}
 };
 
 /// @brief テキストを描画する際に必要な情報を持つ
@@ -30,6 +48,7 @@ private:
 	Transform* _transformCached = nullptr; // Transform cache
 private:
 	int GetAlignedX(int baseX, int textWidth) const;
+	int GetAlignedY(int baseY, int textHeight) const;
 public:
 	/// @brief コンストラクタ
 	/// @param textInfo テキスト情報
@@ -44,4 +63,12 @@ public:
 	/// @brief テキストを設定
 	/// @param text テキスト
 	void SetText(const std::string& text);
+
+	/// @brief テキストの色を設定
+	/// @param color 色
+	void SetColor(const Color& color);
+
+	/// @brief テキストの色を取得
+	/// @return テキストの色
+	Color GetColor() const;
 };

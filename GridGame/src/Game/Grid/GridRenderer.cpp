@@ -22,7 +22,7 @@ void GridRenderer::DrawCells(const Grid& grid, int startX, int startY) const {
 			auto top = startY + y * _gridConfig.cellSize;
 			auto color = grid.GetCell(x, y) ? _onColor : _offColor;
 
-			DrawBox(left, top, left + _gridConfig.cellSize, top + _gridConfig.cellSize, color.ToUInt(), TRUE);
+			DrawBox(left, top, left + _gridConfig.cellSize, top + _gridConfig.cellSize, color.ToRGB(), TRUE);
 		}
 	}
 }
@@ -32,14 +32,14 @@ void GridRenderer::DrawGridLines(int gridSize, int startX, int startY) const {
 	for (int x = 0; x <= gridSize; ++x) {
 		auto posX = startX + x * _gridConfig.cellSize;
 
-		DrawLine(posX, startY, posX, startY + gridSize * _gridConfig.cellSize, _lineColor.ToUInt());
+		DrawLine(posX, startY, posX, startY + gridSize * _gridConfig.cellSize, _lineColor.ToRGB());
 	}
 
 	// ‰¡ü
 	for (int y = 0; y <= gridSize; ++y) {
 		auto posY = startY + y * _gridConfig.cellSize;
 
-		DrawLine(startX, posY, startX + gridSize * _gridConfig.cellSize, posY, _lineColor.ToUInt());
+		DrawLine(startX, posY, startX + gridSize * _gridConfig.cellSize, posY, _lineColor.ToRGB());
 	}
 }
 

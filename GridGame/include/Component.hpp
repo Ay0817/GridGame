@@ -9,6 +9,8 @@ class GameObject;
 class Component {
 protected:
 	GameObject* _owner = nullptr; // 自身を所持している GameObject へのポインタ
+
+	bool _enable = true; // コンポーネントが有効かどうか
 public:
 	/// @brief デストラクタ
 	virtual ~Component() = default;
@@ -38,5 +40,17 @@ public:
 	/// @return 自身を所持している GameObject へのポインタ
 	GameObject* GetOwner() const {
 		return _owner;
+	}
+
+	/// @brief コンポーネントの有効状態を変更する
+	/// @param state true なら 有効, false なら 無効
+	void SetEnable(bool state) {
+		_enable = state;
+	}
+
+	/// @brief コンポーネントの有効状態を取得する
+	/// @return true なら 有効, false なら 無効
+	bool GetEnable() const {
+		return _enable;
 	}
 };

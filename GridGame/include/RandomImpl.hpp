@@ -101,7 +101,7 @@ namespace Internal {
     };
 
     /// @brief 乱数生成のグローバルインスタンス
-    thread_local RandomImpl rng(
+    inline thread_local RandomImpl rng(
         std::chrono::high_resolution_clock::now().time_since_epoch().count()
     );
 }

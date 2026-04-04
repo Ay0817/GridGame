@@ -2,6 +2,7 @@
 
 #include <string>
 #include <string_view>
+#include <utility>
 
 #include "Color.hpp"
 #include "Palette.hpp"
@@ -86,7 +87,10 @@ namespace DxLap {
 		void SetSize(int width, int height);
 
 		/// @brief ウィンドウサイズを取得
-		Vector2 GetSize();
+		Vector2 GetSizeF();
+
+		/// @brief ウィンドウサイズを取得
+		std::pair<int, int> GetSize();
 	}
 
 	/// @brief 画面関連

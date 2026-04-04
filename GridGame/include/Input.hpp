@@ -2,6 +2,8 @@
 
 #include <utility>
 
+#include "Vector2.hpp"
+
 // @brief キーボード入力として対応しているキーコードを定義し、入力システム全体で共通に使用されるキー列挙型
 enum class Keys : uint8_t {
 	A = 0x1e,
@@ -98,9 +100,9 @@ public:
 
 	// @return 現在のマウスカーソル座標を返す
 	[[nodiscard]]
-	static std::pair<int, int> GetMousePosition();
+	static Vector2 GetMousePosition();
 
 	// @return マウスカーソル座標の移動量を返す
 	[[nodiscard]]
-	static std::pair<int, int> GetMouseDelta();
+	static Vector2 GetMouseDelta();
 };
