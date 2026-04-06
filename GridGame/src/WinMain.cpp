@@ -1,9 +1,9 @@
 #include <Windows.h>
 
-#include <Application.hpp>
+#include <Core/Application.hpp>
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
-    Application app;
+    Core::Application app;
 
     return app.Run();
 }

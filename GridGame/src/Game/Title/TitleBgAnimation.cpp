@@ -1,29 +1,32 @@
 #include <cassert>
 
-#include "../../../include/TitleBgAnimation.hpp"
-#include "../../../include/GameObject.hpp"
-#include "../../../include/Random.hpp"
-#include "../../../include/Time.hpp"
+#include <Game/Title/TitleBgAnimation.hpp>
+#include <Core/GameObject.hpp>
+#include <AyLib/Time.hpp>
+#include <AyLib/Random.hpp>
 
-void TitleBgAnimation::Begin() {
-	auto owner = GetOwner();
+namespace Game
+{
+	void TitleBgAnimation::Begin() {
+		auto owner = GetOwner();
 
-	_grid = owner->GetComponent<Grid>();
+		_grid = owner->GetComponent<GridData>();
 
-	assert(_grid != nullptr);
-}
+		assert(_grid != nullptr);
+	}
 
-void TitleBgAnimation::Update() {
-	_timer += Time::GetDeltaTime();
+	void TitleBgAnimation::Update() {
+		_timer += AyLib::Time::GetDeltaTime();
 
-	if (_timer > _interval) {
-		_timer = 0.f;
+		if (_timer > _interval) {
+			_timer = 0.f;
 
-		auto size = _grid->GetSize();
+			auto size = _grid->GetSize();
 
-		auto x = Random::Range(0, size);
-		auto y = Random::Range(0, size);
+			auto x = AyLib::Random::Range(0, size);
+			auto y = AyLib::Random::Range(0, size);
 
-		_grid->Toggle(x, y);
+			_grid->Toggle(x, y);
+		}
 	}
 }

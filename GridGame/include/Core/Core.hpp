@@ -1,0 +1,33 @@
+#pragma once
+
+#include "Audio/SoundPlayer.hpp"
+#include "Audio/ActiveSound.hpp"
+
+#include "Resource/Asset.hpp"
+#include "Resource/AssetManager.hpp"
+#include "Resource/AssetResolver.hpp"
+#include "Resource/Font.hpp"
+#include "Resource/Image.hpp"
+#include "Resource/SoundData.hpp"
+
+#include "UI/ButtonBase.hpp"
+#include "UI/GeneralButton.hpp"
+#include "UI/LabelButton.hpp"
+#include "UI/GestureDetector.hpp"
+#include "UI/Sprite.hpp"
+#include "UI/Text.hpp"
+
+#include "DxLap.hpp"
+#include "Component.hpp"
+#include "GameObject.hpp"
+#include "GameObjectManager.hpp"
+#include "Input.hpp"
+#include "InputSystem.hpp"
+#include "Transform.hpp"
+#include "RectTransform.hpp"
+#include "Renderer.hpp"
+#include "SpriteRenderer.hpp"
+#include "Scene.hpp"
+#include "SceneAPI.hpp"
+#include "SceneManager.hpp"
+#include "TransitionManager.hpp"

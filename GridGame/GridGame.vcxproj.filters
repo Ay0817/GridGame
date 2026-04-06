@@ -9,26 +9,11 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="src\Audio">
-      <UniqueIdentifier>{ac1c425a-649e-4677-a99f-7449d1207df8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Core">
-      <UniqueIdentifier>{1909d3c9-4eca-4917-a8a0-e1188ee19a85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Framework">
-      <UniqueIdentifier>{89a58314-2942-46a3-887e-284f354f19a0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Game">
       <UniqueIdentifier>{9b5de6ba-c48d-4d27-a023-c2134b80bfa5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Resource">
-      <UniqueIdentifier>{e4b41f5c-7550-4376-a421-aa1a8a094376}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Game\Grid">
       <UniqueIdentifier>{f7f726de-2f8c-4ad6-aec1-496b93f4912d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Game\Scene">
-      <UniqueIdentifier>{e877dbfc-fa95-4898-9837-94a7672d06b7}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Game\Title">
       <UniqueIdentifier>{9b848449-eab8-49a8-a5cb-63da9ae52150}</UniqueIdentifier>
@@ -36,8 +21,71 @@
     <Filter Include="src\Game\LightsOut">
       <UniqueIdentifier>{3ca62068-40f7-4fbf-926a-5615c61d1691}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\AyLib">
+      <UniqueIdentifier>{6e884e07-4baa-4148-b2d0-9c105abc773e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Core">
+      <UniqueIdentifier>{8c7cdb25-72ca-478d-9c43-80d57ca8a6d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Game">
+      <UniqueIdentifier>{54b9ab32-4bb5-447d-a20d-79c23851bae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Core\Audio">
+      <UniqueIdentifier>{76a9970a-7538-43cb-8e83-1cbf215fab29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Core\Resource">
+      <UniqueIdentifier>{c61e340b-e709-4924-8fd3-9d979dfbe1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Core\UI">
+      <UniqueIdentifier>{03e54447-7063-4972-92fd-50c53063f6a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Game\Grid">
+      <UniqueIdentifier>{6f43f843-363e-46dd-894e-98715c6e13b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Game\LightsOut">
+      <UniqueIdentifier>{4d922900-e8e6-4eb6-86cd-c3f7394ea7f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Game\Scenes">
+      <UniqueIdentifier>{a2909d16-06a5-4b34-b035-e34875b20f5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Game\Title">
+      <UniqueIdentifier>{ec40dd62-8087-40a0-8f50-f0733af28568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game\Scenes">
+      <UniqueIdentifier>{e877dbfc-fa95-4898-9837-94a7672d06b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{26afc8a5-7408-42d8-bb0c-0294351e8191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Resource">
+      <UniqueIdentifier>{e4b41f5c-7550-4376-a421-aa1a8a094376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AyLib">
+      <UniqueIdentifier>{79947cb9-0f08-462e-a5e1-0008fc96fe41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Audio">
+      <UniqueIdentifier>{d108661b-6ba2-4935-b68d-faf96218210b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\UI">
+      <UniqueIdentifier>{9126034b-3981-45fb-b7e7-12db0a35ed30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\WinMain.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AyLib\Time.cpp">
+      <Filter>src\AyLib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AyLib\TimeImpl.cpp">
+      <Filter>src\AyLib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Application.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\DxLap.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
     <ClCompile Include="src\Core\GameObject.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
@@ -50,53 +98,32 @@
     <ClCompile Include="src\Core\InputSystem.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Framework\Application.cpp">
-      <Filter>src\Framework</Filter>
+    <ClCompile Include="src\Core\RectTransform.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Framework\Scene.cpp">
-      <Filter>src\Framework</Filter>
+    <ClCompile Include="src\Core\Renderer.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Framework\SceneManager.cpp">
-      <Filter>src\Framework</Filter>
+    <ClCompile Include="src\Core\Scene.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\Grid\Grid.cpp">
-      <Filter>src\Game\Grid</Filter>
+    <ClCompile Include="src\Core\SceneManager.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\Grid\GridRenderer.cpp">
-      <Filter>src\Game\Grid</Filter>
-    </ClCompile>
-    <ClCompile Include="src\WinMain.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Resource\Asset.cpp">
-      <Filter>src\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\SoundData.cpp">
-      <Filter>src\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\Audio.cpp">
-      <Filter>src\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Resource\AssetManager.cpp">
-      <Filter>src\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Audio\ActiveSound.cpp">
-      <Filter>src\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Resource\Font.cpp">
-      <Filter>src\Resource</Filter>
+    <ClCompile Include="src\Core\SpriteRenderer.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Transform.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Text.cpp">
+    <ClCompile Include="src\Core\TransitionManager.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\Scene\Title.cpp">
-      <Filter>src\Game\Scene</Filter>
+    <ClCompile Include="src\Game\Grid\GridData.cpp">
+      <Filter>src\Game\Grid</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game\Title\TitleController.cpp">
-      <Filter>src\Game\Title</Filter>
+    <ClCompile Include="src\Game\Grid\GridRenderer.cpp">
+      <Filter>src\Game\Grid</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\LightsOut\LightsOut.cpp">
       <Filter>src\Game\LightsOut</Filter>
@@ -104,217 +131,235 @@
     <ClCompile Include="src\Game\LightsOut\LightsOutInput.cpp">
       <Filter>src\Game\LightsOut</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\DxLap.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Time.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\TimeImpl.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\TransitionManager.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Game\Scene\PlayScene.cpp">
-      <Filter>src\Game\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\Game\LightsOut\LightsOutPlayTimer.cpp">
       <Filter>src\Game\LightsOut</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\Scene\PlayScene.cpp">
+      <Filter>src\Game\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Scene\Title.cpp">
+      <Filter>src\Game\Scenes</Filter>
+    </ClCompile>
     <ClCompile Include="src\Game\Title\TitleBgAnimation.cpp">
+      <Filter>src\Game\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\Title\TitleController.cpp">
       <Filter>src\Game\Title</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\Title\TitlePromptAnimation.cpp">
       <Filter>src\Game\Title</Filter>
     </ClCompile>
-    <ClCompile Include="src\Resource\Image.cpp">
-      <Filter>src\Resource</Filter>
+    <ClCompile Include="src\Core\Audio\ActiveSound.cpp">
+      <Filter>src\Core\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Sprite.cpp">
+    <ClCompile Include="src\Core\Audio\SoundPlayer.cpp">
+      <Filter>src\Core\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Resource\Asset.cpp">
+      <Filter>src\Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Resource\AssetManager.cpp">
+      <Filter>src\Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Resource\Font.cpp">
+      <Filter>src\Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Resource\Image.cpp">
+      <Filter>src\Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Resource\SoundData.cpp">
+      <Filter>src\Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\UI\ButtonBase.cpp">
+      <Filter>src\Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\UI\GeneralButton.cpp">
+      <Filter>src\Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\UI\GestureDetector.cpp">
+      <Filter>src\Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\UI\Sprite.cpp">
+      <Filter>src\Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\UI\Text.cpp">
+      <Filter>src\Core\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Component.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Renderer.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\SpriteRenderer.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\ButtonBase.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\RectTransform.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\GeneralButton.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\GestureDetector.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\Application.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Component.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameObject.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GameObjectManager.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Grid.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GridConfig.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GridRenderer.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Input.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\InputSystem.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scene.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SceneManager.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Audio.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Asset.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\AssetManager.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SoundData.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Hash.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\AssetResolver.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\ActiveSound.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Title.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Font.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Text.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Vector2.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Math.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Transform.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Palette.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Color.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TitleController.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Concepts.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RandomImpl.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Random.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\DxLap.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LightsOutPlayTimer.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SceneAPI.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Time.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TimeImpl.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TransitionManager.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LightsOut.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LightsOutInput.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PlayScene.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TitleBgAnimation.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TitlePromptAnimation.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Action.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LightsOutTutorial.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Rect.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\ButtonBase.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GeneralButton.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\LabelButton.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Image.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Sprite.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SpriteRenderer.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Renderer.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RectTransform.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\GestureDetector.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="include\memo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\AyLib\Action.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Color.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Concepts.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Hash.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Math.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Palette.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Random.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\RandomImpl.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Rect.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Time.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\TimeImpl.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\Vector2.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Application.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Component.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\DxLap.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\GameObject.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\GameObjectManager.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Input.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\InputSystem.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\RectTransform.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Renderer.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Scene.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\SceneAPI.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\SceneManager.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\SpriteRenderer.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Transform.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\TransitionManager.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Audio\ActiveSound.hpp">
+      <Filter>include\Core\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Audio\SoundPlayer.hpp">
+      <Filter>include\Core\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Resource\Asset.hpp">
+      <Filter>include\Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Resource\AssetManager.hpp">
+      <Filter>include\Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Resource\AssetResolver.hpp">
+      <Filter>include\Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Resource\Font.hpp">
+      <Filter>include\Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Resource\Image.hpp">
+      <Filter>include\Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Resource\SoundData.hpp">
+      <Filter>include\Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\UI\ButtonBase.hpp">
+      <Filter>include\Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\UI\GeneralButton.hpp">
+      <Filter>include\Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\UI\GestureDetector.hpp">
+      <Filter>include\Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\UI\LabelButton.hpp">
+      <Filter>include\Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\UI\Sprite.hpp">
+      <Filter>include\Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\UI\Text.hpp">
+      <Filter>include\Core\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Grid\GridData.hpp">
+      <Filter>include\Game\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Grid\GridConfig.hpp">
+      <Filter>include\Game\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Grid\GridRenderer.hpp">
+      <Filter>include\Game\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\LightsOut\LightsOut.hpp">
+      <Filter>include\Game\LightsOut</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\LightsOut\LightsOutInput.hpp">
+      <Filter>include\Game\LightsOut</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\LightsOut\LightsOutPlayTimer.hpp">
+      <Filter>include\Game\LightsOut</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\LightsOut\LightsOutTutorial.hpp">
+      <Filter>include\Game\LightsOut</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Scenes\PlayScene.hpp">
+      <Filter>include\Game\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Scenes\Title.hpp">
+      <Filter>include\Game\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Title\TitleBgAnimation.hpp">
+      <Filter>include\Game\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Title\TitleController.hpp">
+      <Filter>include\Game\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\Title\TitlePromptAnimation.hpp">
+      <Filter>include\Game\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Components.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Core.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AyLib\AyLib.hpp">
+      <Filter>include\AyLib</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,10 +1,13 @@
-#include "../../../include/TitleController.hpp"
-#include "../../../include/Input.hpp"
-#include "../../../include/PlayScene.hpp"
-#include "../../../include/SceneAPI.hpp"
+#include <Game/Title/TitleController.hpp>
+#include <Game/Scenes/PlayScene.hpp>
+#include <Core/Input.hpp>
+#include <Core/SceneAPI.hpp>
 
-void TitleController::Update() {
-	if (Input::GetMouseButtonUp(MouseButtons::Right)) {
-		SceneAPI::ChangeWithTransition<PlayScene>("Play");
+namespace Game
+{
+	void TitleController::Update() {
+		if (Input::GetMouseButtonUp(MouseButtons::Right)) {
+			SceneAPI::ChangeWithTransition<PlayScene>("Play");
+		}
 	}
 }

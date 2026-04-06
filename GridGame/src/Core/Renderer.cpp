@@ -1,23 +1,26 @@
-#include "../../include/Renderer.hpp"
+#include <Core/Renderer.hpp>
 
-Renderer::Renderer(int layer, int order)
-	: Component()
-	, _layer(layer)
-	, _order(order)
-{}
+namespace Core
+{
+	Renderer::Renderer(int layer, int order)
+		: Component()
+		, _layer(layer)
+		, _order(order)
+	{}
 
-int Renderer::GetLayer() const {
-	return _layer;
-}
+	int Renderer::GetLayer() const {
+		return _layer;
+	}
 
-void Renderer::SetLayer(int layer) {
-	_layer = layer;;
-}
+	void Renderer::SetLayer(int layer) {
+		_layer = layer;;
+	}
 
-int Renderer::GetOrder() const {
-	return _order;
-}
+	int Renderer::GetOrder() const {
+		return _order;
+	}
 
-void Renderer::SetOrder(int order) {
-	_order = order;
+	void Renderer::SetOrder(int order) {
+		_order = order;
+	}
 }

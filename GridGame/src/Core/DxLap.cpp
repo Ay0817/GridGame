@@ -1,8 +1,9 @@
 #include <DxLib.h>
 
-#include "../../include/DxLap.hpp"
+#include <Core/DxLap.hpp>
 
-namespace DxLap {
+namespace Core::DxLap 
+{
 	Config& Config::SetTitle(std::string_view titleName)& {
 		title = std::string(titleName);
 
@@ -66,24 +67,24 @@ namespace DxLap {
 	}
 
 	Config& Config::SetBackground(int r, int g, int b, int a)& {
-		bgColor = Color(r, g, b, a);
+		bgColor = AyLib::Color(r, g, b, a);
 
 		return *this;
 	}
 
 	Config&& Config::SetBackground(int r, int g, int b, int a)&& {
-		bgColor = Color(r, g, b, a);
+		bgColor = AyLib::Color(r, g, b, a);
 
 		return std::move(*this);
 	}
 
-	Config& Config::SetBackground(const Color& color)& {
+	Config& Config::SetBackground(const AyLib::Color& color)& {
 		bgColor = color;
 
 		return *this;
 	}
 
-	Config&& Config::SetBackground(const Color& color)&& {
+	Config&& Config::SetBackground(const AyLib::Color& color)&& {
 		bgColor = color;
 
 		return std::move(*this);
@@ -142,12 +143,12 @@ namespace DxLap {
 			DxLib::SetWindowSize(width, height);
 		}
 
-		Vector2 GetSizeF() {
+		AyLib::Vector2 GetSizeF() {
 			int w, h;
 
 			DxLib::GetWindowSize(&w, &h);
 
-			return Vector2(static_cast<float>(w), static_cast<float>(h));
+			return AyLib::Vector2(static_cast<float>(w), static_cast<float>(h));
 		}
 
 		std::pair<int, int> GetSize() {
@@ -164,7 +165,7 @@ namespace DxLap {
 			DxLib::SetGraphMode(width, height, colorBit);
 		}
 
-		void SetBgColor(const Color& color) {
+		void SetBgColor(const AyLib::Color& color) {
 			DxLib::SetBackgroundColor(color.r, color.g, color.b, color.a);
 		}
 	}

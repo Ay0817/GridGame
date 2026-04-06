@@ -1,8 +1,11 @@
-#include "../../include/Transform.hpp"
+#include <Core/Transform.hpp>
 
-Transform::Transform(const Vector2& position, const Vector2& scale, float angle)
-	: Component()
-	, position(position)
-	, scale(scale)
-	, angle(angle)
-{}
+namespace Core
+{
+	Transform::Transform(const AyLib::Vector2& position, const AyLib::Vector2& scale, float angle)
+		: Component()
+		, position(position)
+		, scale(scale)
+		, angle(angle)
+	{}
+}

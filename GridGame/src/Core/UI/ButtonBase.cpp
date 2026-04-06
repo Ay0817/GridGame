@@ -1,0 +1,67 @@
+#include <cassert>
+
+#include <Core/UI/ButtonBase.hpp>
+#include <Core/UI/GestureDetector.hpp>
+#include <Core/GameObject.hpp>
+#include <Core/RectTransform.hpp>
+#include <Core/Input.hpp>
+
+namespace Core::UI
+{
+	void ButtonBase::OnClickedHandler() {
+		OnClicked();
+		OnClickCallBack.Invoke();
+	}
+
+	void ButtonBase::OnPressedHandler(bool isPressed) {
+		OnPressed(isPressed);
+		OnPressedCallBack.Invoke(isPressed);
+	}
+
+	void ButtonBase::OnLongTappedHandler() {
+		OnLongTapped();
+		OnLongTappedCallback.Invoke();
+	}
+
+	void ButtonBase::OnClicked()
+	{}
+
+	void ButtonBase::OnPressed(bool isPressed)
+	{}
+
+	void ButtonBase::OnLongTapped()
+	{}
+
+	void ButtonBase::Begin() {
+		auto owner = GetOwner();
+		auto gesture = owner->GetComponent<GestureDetector>();
+
+		assert(gesture != nullptr);
+
+		_rectTransform = owner->GetComponent<RectTransform>();
+
+		assert(_rectTransform != nullptr);
+
+		gesture->OnClickCallBack.Add([this]() {OnClickedHandler(); });
+		gesture->OnPressedCallBack.Add([this](bool isPressed) {OnPressedHandler(isPressed); });
+		gesture->OnLongTappedCallBack.Add([this]() {OnLongTappedHandler(); });
+	}
+
+	void ButtonBase::End() {
+		OnClickCallBack.Clear();
+		OnPressedCallBack.Clear();
+		OnLongTappedCallback.Clear();
+	}
+
+	void ButtonBase::SetEnable(bool state) {
+		_isEnabled = state;
+	}
+
+	bool ButtonBase::IsEnabled() const {
+		return _isEnabled;
+	}
+
+	bool ButtonBase::IsDisabled() const {
+		return !_isEnabled;
+	}
+}

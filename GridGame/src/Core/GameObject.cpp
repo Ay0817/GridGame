@@ -1,104 +1,122 @@
-#include "../../include/GameObject.hpp"
+#include <Core/GameObject.hpp>
 
-GameObject::GameObject(const std::string& name)
-	: _name(name)
-	, _instanceID(0)
-	, _active(true)
-	, _destroyed(false)
-	, _isInit(false)
-{}
+namespace Core
+{
+	GameObject::GameObject(const std::string& name)
+		: _name(name)
+		, _instanceID(0)
+		, _active(true)
+		, _destroyed(false)
+		, _isInit(false)
+	{}
 
-GameObject::GameObject(const std::string & name, const Transform & transform)
-	: _name(name)
-	, _instanceID(0)
-	, _active(true)
-	, _destroyed(false)
-	, _isInit(false)
-	, _transfrom(transform)
-{}
+	GameObject::GameObject(const std::string& name, const Transform& transform)
+		: _name(name)
+		, _instanceID(0)
+		, _active(true)
+		, _destroyed(false)
+		, _isInit(false)
+		, _transfrom(transform)
+	{}
 
-void GameObject::Begin() {
-	if (_destroyed || !_active) {
-		return;
+	void GameObject::Begin() {
+		if (_destroyed || !_active) {
+			return;
+		}
+
+		for (auto& component : _components) {
+			if (component->GetEnable()) {
+				component->Begin();
+			}
+		}
+
+		_isInit = true;
 	}
 
-	for (auto& component : _components) {
-		if (component->GetEnable()) {
-			component->Begin();
+	void GameObject::Update() {
+		if (_destroyed || !_active) {
+			return;
+		}
+
+		if (!_isInit) {
+			Begin();
+		}
+
+		for (auto& component : _components) {
+			if (component->GetEnable()) {
+				component->Update();
+			}
 		}
 	}
 
-	_isInit = true;
-}
+	void GameObject::LateUpdate() {
+		if (_destroyed || !_active) {
+			return;
+		}
 
-void GameObject::Update() {
-	if (_destroyed || !_active) {
-		return;
-	}
-
-	if (!_isInit) {
-		Begin();
-	}
-
-	for (auto& component : _components) {
-		if (component->GetEnable()) {
-			component->Update();
+		for (auto& component : _components) {
+			if (component->GetEnable()) {
+				component->LateUpdate();
+			}
 		}
 	}
-}
 
-void GameObject::LateUpdate() {
-	if (_destroyed || !_active) {
-		return;
-	}
+	void GameObject::Draw() const {
+		if (_destroyed || !_active) {
+			return;
+		}
 
-	for (auto& component : _components) {
-		if (component->GetEnable()) {
-			component->LateUpdate();
+		for (auto& component : _components) {
+			if (component->GetEnable()) {
+				component->Draw();
+			}
 		}
 	}
-}
 
-void GameObject::Draw() const {
-	if (_destroyed || !_active) {
-		return;
-	}
-
-	for (auto& component : _components) {
-		if (component->GetEnable()) {
-			component->Draw();
+	void GameObject::End() {
+		for (auto& component : _components) {
+			if (component->GetEnable()) {
+				component->End();
+			}
 		}
 	}
-}
 
-void GameObject::End() {
-	for (auto& component : _components) {
-		if (component->GetEnable()) {
-			component->End();
-		}
+	void GameObject::SetDestroyed(bool state) {
+		_destroyed = state;
 	}
-}
 
-void GameObject::SetDestroyed(bool state) {
-	_destroyed = state;
-}
+	void GameObject::SetActive(bool state) {
+		_active = state;
+	}
 
-void GameObject::SetActive(bool state) {
-	_active = state;
-}
+	bool GameObject::GetActive() const {
+		return _active;
+	}
 
-bool GameObject::GetActive() const {
-	return _active;
-}
+	unsigned int GameObject::GetInstaceID() const {
+		return _instanceID;
+	}
 
-unsigned int GameObject::GetInstaceID() const {
-	return _instanceID;
-}
+	std::string GameObject::GetName() {
+		return _name;
+	}
 
-std::string GameObject::GetName() {
-	return _name;
-}
+	void GameObject::SetName(const std::string& name) {
+		_name = name;
+	}
 
-void GameObject::SetName(const std::string& name) {
-	_name = name;
+	std::vector<Component*> GameObject::GetComponents() const
+	{
+		std::vector<Component*> result;
+
+		for (auto& component : _components) {
+			result.emplace_back(component.get());
+		}
+
+		return result;
+	}
+
+	Transform& GameObject::GetTransform() {
+		return _transfrom;
+	}
 }
